@@ -36,6 +36,9 @@
               <a class="nav-link" href="services.php">Services</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="pricing.php">Menbership</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
             <li class="nav-item dropdown">
