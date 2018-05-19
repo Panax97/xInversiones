@@ -87,9 +87,26 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+
+        <?php
+        $carpetaDestino="imagenes/header/";
+        $c="imagenes/header/";
+        $cont= 0;
+        $url = array();
+         if($dir=opendir($carpetaDestino)){
+
+           while($archivo=readdir($dir)){
+
+             if($archivo !="." && $archivo !=".."){
+               $cont ++;
+            $url[]=$archivo;
+           }
+           }
+         }
+         ?>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+          <div class="carousel-item active" style="background-image: url('imagenes/header/ejemplo.jpg')">
             <div class="carousel-caption d-none d-md-block">
               <h3>First Slide</h3>
               <p>This is a description for the first slide.</p>
