@@ -230,9 +230,10 @@
       </ol>
 
           <h1>Subir Imagen</h1>
-          <form action="mto/subir_image.php" method="post" enctype="multipart/form-data" name="inscripcion">
+          <form action="mto/mto_image.php" method="post" enctype="multipart/form-data" name="inscripcion">
         <input type="file" name="archivo[]" multiple="multiple">
         <input type="submit" value="Enviar"  class="trig">
+          <input type="hidden" name="valor" value="2">
       </form>
     </br>
     </br>
@@ -253,6 +254,7 @@
                 $cont ++;
 
                  ?>
+
                  <div class="col-lg-4 col-sm-6 portfolio-item">
                    <div class="card h-100">
                      <a href="#"><img class="card-img-top" src="imagenes/header/<?php echo $archivo ?>" alt=""></a>
@@ -260,9 +262,16 @@
                        <h4 class="card-title">
                         <center> <a href="#">Header <?php echo $cont ?></a></center>
                        </h4>
-
                      </div>
+                     <form action="mto/mto_image.php" method="post" enctype="multipart/form-data" name="borrar">
+                       <div class="card-footer">
+                         <button type="submit" class="btn btn-danger">Borrar</button>
+                         <input type="hidden" name="valor" value="1">
+                         <input type="hidden" name="nombre" value="imagenes/header/<?php echo $archivo ?>">
+                       </div>
+                     </form>
                    </div>
+
                  </div>
                  <?php
 

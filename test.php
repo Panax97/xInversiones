@@ -13,7 +13,5 @@ $url = array();
    }
    }
  }
- for($i=0;$i<=0;$i++){
-    echo $url[0];
-}
+ for($i=0;$i<=0;$i++){echo $url[0];}
  ?>

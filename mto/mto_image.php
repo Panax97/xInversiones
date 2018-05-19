@@ -229,14 +229,18 @@
           </ol>
           <div class="row">
             <div class="col-12">
-              
+
               <?php
+              $opcion = $_POST['valor'];
+
+
                   # definimos la carpeta destino
                   $carpetaDestino="../imagenes/header/";
 
                   # si hay algun archivo que subir
                   if(isset($_FILES["archivo"]) && $_FILES["archivo"]["name"][0])
                   {
+
 
                       # recorremos todos los arhivos que se han subido
                       for($i=0;$i<count($_FILES["archivo"]["name"]);$i++)
@@ -260,6 +264,8 @@
                                       <center>
                                         <div class="col-md-7">
                                         <div class="alert alert-success"><strong>Exito!</strong> La Imagen Seleccionada Se subio Con Exito!</div>
+
+
                                         </div>
                                       </center>
 
@@ -295,7 +301,16 @@
                           }
                       }
                   }else{
-                      echo "<br>No se ha subido ninguna imagen";
+                    $name = $_POST['nombre'];
+                      if($opcion=1){
+                        unlink("../".$name);
+                        ?>
+                        <div class="alert alert-danger"><strong>Exito!</strong> La Imagen Seleccionada Se borro Con Exito!</div>
+                        </div>
+                        <?php
+                      }
+                     else{echo "<br>Eliminado no se subio";}
+
                   }
                   ?>
             </div>
